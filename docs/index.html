@@ -163,7 +163,7 @@ Feel like:
 
 ---
 
-## Get user credentials, log in and change your password!
+## Get user credentials, log in and **change your password!**
 
 - `ssh cbXXXXXX@login.lcc3.uibk.ac.at`
 - Change password with `passwd`
@@ -171,8 +171,77 @@ Feel like:
 	- don't use these credentials for anything other than this course
 	- coin mining isn't worth it anyways
 
----
 
+### VsCode SSH Remote Extension
+- Install `Remote-SSH` extension
+- Change VsCode Server install path:
+	- Open extension settings
+	- Scroll down to `Remote.SSH: Server Install Path`
+	- Add Item:
+		- Key: `login.lcc3.uibk.ac.at`
+		- Item: `/scratch/cbXXXXXX` *(Recommended)*
+
+
+### SSH setup (Hosts file)
+
+- Edit `~/.ssh/config`
+```
+Host lcc3 // Choose whatever name
+	HostName login.lcc3.uibk.ac.at
+	User cbXXXXXX
+```
+- Allows use of `ssh lcc3` instead of `ssh cbXXXXXX@login.lcc3.uibk.ac.at`
+
+
+
+### Changes for more convenient SSH setup (Keys)
+
+- Re-typing secure passwords is annoying, SSH keys help with this:
+```bash
+ssh-keygen -t rsa -b 4069 // generate a new keypair using RSA with 4069 bits
+```
+
+- You will be prompted on the name/location of the key, default is sufficient
+- Next you will be prompted to enter a password for the key (optional)
+- Generated keys will be stored in ~/.ssh/, e.g. id_rsa (private) and id_rsa.pub (public)
+
+
+### Changes for more convenient SSH setup (Keys)
+- Generated SSH keys can be copied to a remote host to be used for login using
+```bash
+ssh-copy-id cbXXXXXX@login.lcc3.uibk.ac.at
+```
+
+- You will be prompted for your cb-accounts password
+- On success, the copied keys will be used for authentication on the host
+
+
+### Editing remote files
+- If you are using an editor that does not provide similar funcionality to the `Remote-SSH` extension, editing files on the remote can get tedious
+	- Option 1: Edit files locally and copy
+		- Copying files is done the easiest using `scp`, which should be included with your distribution
+		- `scp ./file/to/copy cbXXXXXX@login.lcc3.uibk.ac.at:/scratch/cbXXXXXX/file/on/remote`
+
+
+	- Option 2: Mount remote directory using `sshfs`
+		- Available in `apt` and `pacman` package managers, `yum` requires install of `epel-release first`
+		```bash
+			[pkg-man] [install] sshfs
+			// Mounting:
+			sshfs lcc3:/remote/dir /local/dir
+			sshfs cbXXXXXX@login.lcc3.uibk.ac.at:/remote/dir /local/dir
+			// Unmounting:
+			fusermount3 -u /local/dir
+		```
+		- Note: When using this method, make sure you are **compiling on the remote**
+
+
+### Additional note for WSL2 Users
+- When connecting your host machine to the VPN, the WSL network adapter **is not included**
+- This means that even if your host can reach the login node, your WSL will not be able to
+- [There seems to be a workaround](https://superuser.com/questions/1630487/no-internet-connection-ubuntu-wsl-while-vpn)
+
+---
 ## Submission systems
 
 <div class="container">
@@ -181,6 +250,7 @@ Feel like:
 
 - Responsible for resource management and job orchestration
 	- used to submit or cancel "jobs", query their status, get information about cluster, ...
+	- "jobs" defined using [job files](https://github.com/uibk-dps-teaching/ps_parprog_2025/blob/main/job.sh)
 - Very popular: SLURM
 	- modern, complex but very capable 
 	- de-facto standard on most systems these days
@@ -252,7 +322,7 @@ JOBID PRIORITY PARTITION NAME USER STATE NODES CPUS TIME_LIMIT NODELIST(REASON)
 				slideNumber: true,
 				progress: true,
 				width: 1920,
-    			height: 1200,
+				height: 1200,
 				controls: true,
 				help: true,
 				mouseWheel: true,

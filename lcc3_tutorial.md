@@ -57,3 +57,59 @@ Clusters usually have a lot of software packages installed, often in multiple ve
 
 * Current workload of LCC3 (only works within the UIBK network): https://login.lcc3.uibk.ac.at/cgi-bin/state.pl
 * Hardware details: https://www.uibk.ac.at/zid/systeme/hpc-systeme/leo3/hardware/
+
+## General hints for ssh usage
+### VsCode SSH Remote Extension
+- Install `Remote-SSH` extension
+- Change VsCode Server install path:
+	- Open extension settings
+	- Scroll down to `Remote.SSH: Server Install Path`
+	- Add Item:
+		- Key: `login.lcc3.uibk.ac.at`
+		- Item: `/scratch/cbXXXXXX` *(Recommended)*
+
+### SSH setup (Hosts file)
+- Edit `~/.ssh/config`
+```
+Host lcc3 // Choose whatever name
+	HostName login.lcc3.uibk.ac.at
+	User cbXXXXXX
+```
+- Allows use of `ssh lcc3` instead of `ssh cbXXXXXX@login.lcc3.uibk.ac.at`
+
+### Changes for more convenient SSH setup (Keys)
+- Re-typing secure passwords is annoying, SSH keys help with this:
+```bash
+ssh-keygen -t rsa -b 4069 // generate a new keypair using RSA with 4069 bits
+```
+
+- You will be prompted on the name/location of the key, default is sufficient
+- Next you will be prompted to enter a password for the key (optional)
+- Generated keys will be stored in ~/.ssh/, e.g. id_rsa (private) and id_rsa.pub (public)
+
+- Generated SSH keys can be copied to a remote host to be used for login using
+```bash
+ssh-copy-id cbXXXXXX@login.lcc3.uibk.ac.at
+```
+
+- You will be prompted for your cb-accounts password
+- On success, the copied keys will be used for authentication on the host
+
+### Editing remote files
+- If you are using an editor that does not provide similar funcionality to the `Remote-SSH` extension, editing files on the remote can get tedious
+	- Option 1: Edit files locally and copy
+		- Copying files is done the easiest using `scp`, which should be included with your distribution
+		- `scp ./file/to/copy cbXXXXXX@login.lcc3.uibk.ac.at:/scratch/cbXXXXXX/file/on/remote`
+
+
+	- Option 2: Mount remote directory using `sshfs`
+		- Available in `apt` and `pacman` package managers, `yum` requires install of `epel-release first`
+		```bash
+			[pkg-man] [install] sshfs
+			// Mounting:
+			sshfs lcc3:/remote/dir /local/dir
+			sshfs cbXXXXXX@login.lcc3.uibk.ac.at:/remote/dir /local/dir
+			// Unmounting:
+			fusermount3 -u /local/dir
+		```
+
