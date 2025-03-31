@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <pthread.h>
+
 
 // Include that allows to print result as an image
 #define STB_IMAGE_WRITE_IMPLEMENTATION
@@ -11,10 +13,18 @@
 #define X 1280
 #define Y 720
 #define MAX_ITER 10000
+#define NUM_THREADS 4
 
-void calc_mandelbrot(uint8_t image[Y][X]) {
-	//iterate over each pixel
-    #pragma omp parallel for
+uint8_t image[Y][X];
+
+typedef struct {
+    int start_row;
+    int end_row;
+} Thread_Data;
+
+void* calc_mandelbrot_thread(void* arg) {
+	Thread_Data* data = (Thread_Data*)arg; // Cast the argument to the correct type
+
     for (int py = 0; py < Y; py++) {
         for (int px = 0; px < X; px++) {
             double x = 0.0, y = 0.0;
@@ -34,13 +44,30 @@ void calc_mandelbrot(uint8_t image[Y][X]) {
             image[py][px] = (uint8_t)(255 * ((double)iteration / MAX_ITER));
         }
     }
+    return NULL;
+}
+
+void calc_mandelbrot_parallel(int num_threads){
+    pthread_t threads[num_threads]; // Array to store the thread IDs
+    Thread_Data thread_data[num_threads]; // Array to store the data for each thread
+
+    int rows_per_thread = Y / num_threads; // split the rows between the threads
+    for(int i = 0; i < num_threads; i++){
+        thread_data[i].start_row = i * rows_per_thread;
+        thread_data[i].end_row = (i == num_threads - 1) ? Y : (i + 1) * rows_per_thread; // last thread takes the remaining rows
+        pthread_create(&threads[i], NULL, calc_mandelbrot_thread, &thread_data[i]); // Create the thread thread_data[i] is the argument passed to the thread
+    } 
+    for(int i = 0; i < num_threads; i++){
+        pthread_join(threads[i], NULL);
+    }
+
 }
 
 
 int main() {
-	uint8_t image[Y][X];
+	int num_threads = NUM_THREADS;
 
-	calc_mandelbrot(image);
+	calc_mandelbrot_parallel(num_threads);
 
 	const int channel_nr = 1, stride_bytes = 0;
 	stbi_write_png("mandelbrot.png", X, Y, channel_nr, image, stride_bytes);
