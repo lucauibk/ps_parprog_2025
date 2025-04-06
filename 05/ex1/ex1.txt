@@ -1,0 +1,5 @@
+1. der code demonstriert eine flag synchronisation mit 2 threads:
+Thread 1: schreibt data = 42 und setzt die flag auf 1
+Thread 2: wartet in einer while schleife bis die flag 1 ist und data sozusagen gesetzt ist und liest dann data und gibt aus
+
+2.
