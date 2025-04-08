@@ -1,5 +1,7 @@
 #include <omp.h>
 #include <stdio.h>
+//flush schreibt von cache in den Speicher
+//atomic stellt sicher das nur ein Thread auf die Variable zugreift
 
 int main() {
 
