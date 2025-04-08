@@ -2,6 +2,7 @@
 Thread 1: schreibt data = 42 und setzt die flag auf 1
 Thread 2: wartet in einer while schleife bis die flag 1 ist und data sozusagen gesetzt ist und liest dann data und gibt aus
 
-2.mit -O3 gab er bei mir garnichts aus und blieb in der endlos schlange hängen wahrscheinlich weil 
+2.mit -O3 gab er bei mir garnichts aus und blieb in der endlos schlange hängen wahrscheinlich weil flag nicht richtig gelesen wurde
+und in der while schleife hängen blieb weil flag aus dem cache gelesen wird und nicht aus dem hauptspeicher
 
-3.
+3. in code
