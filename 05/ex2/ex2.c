@@ -48,7 +48,7 @@ int main(){
     //f ist vor der Parallelregion definiert, also nicht initalisiert in den Threads
     //x wird außerhalb der Schleife verwendet, ist aber nur in einem Thread definiert (undefiniertes Verhalten)
     f = 2; //wenn variable vor omp parallel deklariert wrid wird firstprivate benötigt
-    #pragma omp parallel for firstprivate(f) lastprivate(x)
+    #pragma omp parallel for firstprivate(f) private(x) //fix
     for (i=0; i<N; i++) {
         x = f * b[i];
         a[i] = x - 7;
@@ -56,15 +56,15 @@ int main(){
     a[0] = x; 
     //
     sum = 0; 
-    #pragma omp parallel for
+    #pragma omp parallel for reduction(+:sum) //fix
     for (i=0; i<N; i++) {
+        #pragma omp atomic //fix
         sum = sum + b[i];
     }
     //
     #pragma omp parallel
-    #pragma omp for
+    #pragma omp for collapse(2) //fix
     for (i=0; i<N; i++) {
-        #pragma omp for
         for (j=0; j<N; j++) {
             a[i][j] = b[i][j];
         }
