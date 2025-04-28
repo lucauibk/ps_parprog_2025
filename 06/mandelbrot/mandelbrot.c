@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <omp.h>
 
 // Include that allows to print result as an image
 #define STB_IMAGE_WRITE_IMPLEMENTATION
@@ -14,7 +15,7 @@
 
 void calc_mandelbrot(uint8_t image[Y][X]) {
 	//iterate over each pixel
-    #pragma omp parallel for collapese(2)
+    #pragma omp parallel for schedule(dynamic)
     for (int py = 0; py < Y; py++) {
         for (int px = 0; px < X; px++) {
             double x = 0.0, y = 0.0;
@@ -40,7 +41,11 @@ void calc_mandelbrot(uint8_t image[Y][X]) {
 int main() {
 	uint8_t image[Y][X];
 
-	calc_mandelbrot(image);
+	double start = omp_get_wtime(); // Startzeit
+    calc_mandelbrot(image);
+    double end = omp_get_wtime();   // Endzeit
+
+    printf("Time: %.4f seconds\n", end - start);
 
 	const int channel_nr = 1, stride_bytes = 0;
 	stbi_write_png("mandelbrot.png", X, Y, channel_nr, image, stride_bytes);

@@ -13,7 +13,7 @@ int main() {
     
     #pragma omp parallel private(x, y)
     {
-        unsigned int seed = omp_get_thread_num();
+        unsigned int seed = time(NULL) ^ omp_get_thread_num();
         #pragma omp for
         for (i = 0; i < n; i++) {
             x = (double) rand_r(&seed) / RAND_MAX;

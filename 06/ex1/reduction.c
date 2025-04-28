@@ -5,21 +5,23 @@
 
 int main() {
     long n = 700000000;
-    long count = 0;
+    long i, count = 0;
     double x, y, pi;
     double startTime, endTime;
     
     startTime = omp_get_wtime();
     
-    #pragma omp parallel for reduction(+:count) private(x, y)
-    for (long i = 0; i < n; i++) {
-        unsigned int seed = omp_get_thread_num() * n + i; // Bessere Verteilung des Seeds
+    #pragma omp parallel private(x, y)
+    {
+        unsigned int seed = time(NULL) ^ omp_get_thread_num();
+        #pragma omp for reduction(+:count)
+        for (i = 0; i < n; i++) {
+            x = (double) rand_r(&seed) / RAND_MAX;
+            y = (double) rand_r(&seed) / RAND_MAX;
 
-        x = (double) rand_r(&seed) / RAND_MAX;
-        y = (double) rand_r(&seed) / RAND_MAX;
-
-        if (x * x + y * y <= 1) {
-            count++;
+            if (x * x + y * y <= 1) {
+                count++;
+            }
         }
     }
 

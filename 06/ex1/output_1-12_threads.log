@@ -1,0 +1,57 @@
+Benchmark on n003.intern.lcc3.intra.uibk.ac.at at Mon Apr 28 14:14:16 CEST 2025
+
+Running with 1 threads:
+[Reduction] Approximate value of pi: 3.141595
+Time: 10.3307 seconds
+Real time reduction: 10.34 seconds
+[Atomic] Approximate value of pi: 3.141595
+Time: 14.0773 seconds
+Real time atomic: 14.09 seconds
+[Critical] Approximate value of pi: 3.141598
+Time: 16.4914 seconds
+Real time critical: 16.50 seconds
+
+Running with 2 threads:
+[Reduction] Approximate value of pi: 3.141603
+Time: 5.1721 seconds
+Real time reduction: 5.17 seconds
+[Atomic] Approximate value of pi: 3.141595
+Time: 24.5503 seconds
+Real time atomic: 24.55 seconds
+[Critical] Approximate value of pi: 3.141580
+Time: 68.0694 seconds
+Real time critical: 68.07 seconds
+
+Running with 4 threads:
+[Reduction] Approximate value of pi: 3.141581
+Time: 2.6086 seconds
+Real time reduction: 2.61 seconds
+[Atomic] Approximate value of pi: 3.141547
+Time: 22.3935 seconds
+Real time atomic: 22.39 seconds
+[Critical] Approximate value of pi: 3.141571
+Time: 119.5903 seconds
+Real time critical: 119.59 seconds
+
+Running with 8 threads:
+[Reduction] Approximate value of pi: 3.141586
+Time: 1.3468 seconds
+Real time reduction: 1.34 seconds
+[Atomic] Approximate value of pi: 3.141586
+Time: 25.4888 seconds
+Real time atomic: 25.49 seconds
+[Critical] Approximate value of pi: 3.141612
+Time: 162.0802 seconds
+Real time critical: 162.08 seconds
+
+Running with 12 threads:
+[Reduction] Approximate value of pi: 3.141609
+Time: 1.0821 seconds
+Real time reduction: 1.08 seconds
+[Atomic] Approximate value of pi: 3.141609
+Time: 15.7834 seconds
+Real time atomic: 15.78 seconds
+[Critical] Approximate value of pi: 3.141619
+Time: 175.4334 seconds
+Real time critical: 175.43 seconds
+Done at Mon Apr 28 14:25:21 CEST 2025
