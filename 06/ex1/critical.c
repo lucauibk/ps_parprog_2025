@@ -11,25 +11,26 @@ int main() {
     
     startTime = omp_get_wtime();
     
-    srand((unsigned) time(NULL));
-    #pragma omp for
-    for (i = 0; i < n; i++) {
-        x = (double) rand() / RAND_MAX;
-        y = (double) rand() / RAND_MAX;
+    #pragma omp parallel private(x, y)
+    {
+        unsigned int seed = omp_get_thread_num();
+        #pragma omp for
+        for (i = 0; i < n; i++) {
+            x = (double) rand_r(&seed) / RAND_MAX;
+            y = (double) rand_r(&seed) / RAND_MAX;
 
-        if (x * x + y * y <= 1)
-        #pragma omp critical
-        {
-            // Critical section to update count
-            count++;
+            if (x * x + y * y <= 1) {
+                #pragma omp critical
+                count++;
+            }
         }
     }
 
     endTime = omp_get_wtime();
 
     pi = 4.0 * count / n;
-    printf("Approximate value of pi: %f\n", pi);
-	printf("time: %2.4f seconds\n", endTime-startTime);
+    printf("[Critical] Approximate value of pi: %f\n", pi);
+    printf("Time: %2.4f seconds\n", endTime - startTime);
     
     return 0;
 }

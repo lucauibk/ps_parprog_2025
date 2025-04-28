@@ -1,0 +1,13 @@
+Benchmark on n004.intern.lcc3.intra.uibk.ac.at at Mon Apr 28 09:05:04 CEST 2025
+
+Running with 12 threads:
+[Reduction] Approximate value of pi: 3.141585
+Time: 7.1439 seconds
+Real time reduction: 7.15 seconds
+[Atomic] Approximate value of pi: 3.141569
+Time: 24.6697 seconds
+Real time atomic: 24.69 seconds
+[Critical] Approximate value of pi: 3.141569
+Time: 176.3410 seconds
+Real time critical: 176.44 seconds
+Done at Mon Apr 28 09:08:33 CEST 2025

@@ -5,20 +5,20 @@
 
 int main() {
     long n = 700000000;
-    long i, count = 0;
+    long count = 0;
     double x, y, pi;
     double startTime, endTime;
     
     startTime = omp_get_wtime();
     
-    srand((unsigned) time(NULL));
-    #pragma omp for reduction(+:count)
-    for (i = 0; i < n; i++) {
-        x = (double) rand() / RAND_MAX;
-        y = (double) rand() / RAND_MAX;
+    #pragma omp parallel for reduction(+:count) private(x, y)
+    for (long i = 0; i < n; i++) {
+        unsigned int seed = omp_get_thread_num() * n + i; // Bessere Verteilung des Seeds
 
-        if (x * x + y * y <= 1)
-        {
+        x = (double) rand_r(&seed) / RAND_MAX;
+        y = (double) rand_r(&seed) / RAND_MAX;
+
+        if (x * x + y * y <= 1) {
             count++;
         }
     }
@@ -26,8 +26,8 @@ int main() {
     endTime = omp_get_wtime();
 
     pi = 4.0 * count / n;
-    printf("Approximate value of pi: %f\n", pi);
-	printf("time: %2.4f seconds\n", endTime-startTime);
+    printf("[Reduction] Approximate value of pi: %f\n", pi);
+    printf("Time: %2.4f seconds\n", endTime - startTime);
     
     return 0;
 }
