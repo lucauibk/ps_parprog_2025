@@ -36,6 +36,7 @@ for that assignment have to be handed in via OLAT by 17:00 on the previous day
 | 2025-04-08 | [5](05)    | OpenMP correctness and flush                                |
 | 2025-04-29 | [6](06)    | OpenMP aggregation, loop scheduling and Mandelbrot          |
 | 2025-05-06 | [7](07)    | Dependence Analysis                                         |
+| 2025-05-13 | [8](08)    | Auto-vectorization, dependence analysis                     |
 
 ## General Information
 
