@@ -1,0 +1,37 @@
+Running stability tests...\n
+Stability test for slow with 8 threads:
+Run 1:
+sum: 67108864, time: 19.5110 seconds
+Run 2:
+sum: 67108864, time: 22.1987 seconds
+Run 3:
+sum: 67108864, time: 23.3017 seconds
+Run 4:
+sum: 67108864, time: 22.4874 seconds
+Run 5:
+sum: 67108864, time: 19.6969 seconds
+-----------------------------------
+Stability test for medium with 8 threads:
+Run 1:
+sum: 67108864, time: 3.6060 seconds
+Run 2:
+sum: 67108864, time: 3.9693 seconds
+Run 3:
+sum: 67108864, time: 3.8672 seconds
+Run 4:
+sum: 67108864, time: 3.5117 seconds
+Run 5:
+sum: 67108864, time: 3.8665 seconds
+-----------------------------------
+Stability test for fast with 8 threads:
+Run 1:
+sum: 67108864, time: 0.0007 seconds
+Run 2:
+sum: 67108864, time: 0.0008 seconds
+Run 3:
+sum: 67108864, time: 0.0010 seconds
+Run 4:
+sum: 67108864, time: 0.0010 seconds
+Run 5:
+sum: 67108864, time: 0.0008 seconds
+-----------------------------------

@@ -1,0 +1,94 @@
+Running tests...
+Running slow with 1 threads:
+sum: 67108864, time: 1.2686 seconds
+-----------------------------------
+Running slow with 2 threads:
+sum: 67108864, time: 4.9872 seconds
+-----------------------------------
+Running slow with 4 threads:
+sum: 67108864, time: 15.4400 seconds
+-----------------------------------
+Running slow with 8 threads:
+sum: 67108864, time: 19.5686 seconds
+-----------------------------------
+Running slow with 12 threads:
+sum: 67108864, time: 24.8664 seconds
+-----------------------------------
+Running medium with 1 threads:
+sum: 67108864, time: 0.4331 seconds
+-----------------------------------
+Running medium with 2 threads:
+sum: 67108864, time: 2.4965 seconds
+-----------------------------------
+Running medium with 4 threads:
+sum: 67108864, time: 3.3470 seconds
+-----------------------------------
+Running medium with 8 threads:
+sum: 67108864, time: 3.6144 seconds
+-----------------------------------
+Running medium with 12 threads:
+sum: 67108864, time: 4.0223 seconds
+-----------------------------------
+Running fast with 1 threads:
+sum: 67108864, time: 0.0000 seconds
+-----------------------------------
+Running fast with 2 threads:
+sum: 67108864, time: 0.0006 seconds
+-----------------------------------
+Running fast with 4 threads:
+sum: 67108864, time: 0.0006 seconds
+-----------------------------------
+Running fast with 8 threads:
+sum: 67108864, time: 0.0008 seconds
+-----------------------------------
+Running fast with 12 threads:
+sum: 67108864, time: 0.0010 seconds
+-----------------------------------
+
+without optimization flags:
+Running tests...
+Running slow with 1 threads:
+sum: 67108864, time: 1.2904 seconds
+-----------------------------------
+Running slow with 2 threads:
+sum: 67108864, time: 6.3529 seconds
+-----------------------------------
+Running slow with 4 threads:
+sum: 67108864, time: 15.3029 seconds
+-----------------------------------
+Running slow with 8 threads:
+sum: 67108864, time: 22.1072 seconds
+-----------------------------------
+Running slow with 12 threads:
+sum: 67108864, time: 25.6352 seconds
+-----------------------------------
+Running medium with 1 threads:
+sum: 67108864, time: 0.4369 seconds
+-----------------------------------
+Running medium with 2 threads:
+sum: 67108864, time: 1.0988 seconds
+-----------------------------------
+Running medium with 4 threads:
+sum: 67108864, time: 2.0702 seconds
+-----------------------------------
+Running medium with 8 threads:
+sum: 67108864, time: 4.1045 seconds
+-----------------------------------
+Running medium with 12 threads:
+sum: 67108864, time: 3.9129 seconds
+-----------------------------------
+Running fast with 1 threads:
+sum: 67108864, time: 0.0000 seconds
+-----------------------------------
+Running fast with 2 threads:
+sum: 67108864, time: 0.0008 seconds
+-----------------------------------
+Running fast with 4 threads:
+sum: 67108864, time: 0.0025 seconds
+-----------------------------------
+Running fast with 8 threads:
+sum: 67108864, time: 0.0007 seconds
+-----------------------------------
+Running fast with 12 threads:
+sum: 67108864, time: 0.0007 seconds
+-----------------------------------
