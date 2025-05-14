@@ -19,6 +19,7 @@ int main(int argc, char** argv) {
     // Allocate memory for the 2D array
     start_time = omp_get_wtime();
     matrix = (long long **)malloc(N * sizeof(long long *));
+    //malloc is not thread safe
     for (int i = 0; i < N; i++) {
         matrix[i] = (long long *)malloc(N * sizeof(long long));
     }
@@ -27,6 +28,7 @@ int main(int argc, char** argv) {
 
     // Initialize the matrix using OpenMP parallel for
     start_time = omp_get_wtime();
+    #pragma omp parallel for collapse(2)
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             matrix[i][j] = i + j;
@@ -38,6 +40,7 @@ int main(int argc, char** argv) {
     // Perform a computation on the matrix
     long long sum = 0.0;
     start_time = omp_get_wtime();
+    #pragma omp parallel for reduction(+:sum)
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             sum += matrix[i][j];
@@ -50,6 +53,7 @@ int main(int argc, char** argv) {
 
     // Free the allocated memory
     start_time = omp_get_wtime();
+    #pragma omp parallel for
     for (int i = 0; i < N; i++) {
         free(matrix[i]);
     }

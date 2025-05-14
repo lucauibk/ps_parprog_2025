@@ -24,6 +24,3 @@ zip: clean
 
 .PHONY: clean
 clean:
-	@for dir in ex?; do \
-	  $(MAKE) -C "$$dir" clean; \
-	done
