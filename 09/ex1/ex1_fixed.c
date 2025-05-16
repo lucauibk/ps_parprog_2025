@@ -13,9 +13,8 @@
 
 #define INIT_ARRAY(arr, label) \
 	do { \
-		if (!(arr)) PERROR_GOTO(label); \
 		for (long i = 0; i < n; ++i) { \
-			(arr)[i] = malloc(sizeof(**(arr)) * n); \
+			(arr)[i] = calloc(n, sizeof(**(arr))); /* ✅ FIXED: calloc ensures zero-initialized matrix */ \
 			if (!(arr)[i]) PERROR_GOTO(label); \
 		} \
 	} while (0)
@@ -34,7 +33,6 @@ void free_2d_array(int **arr, long len) {
 }
 
 int main(int argc, char **argv) {
-	// handle input
 	if (argc != 2) {
 		fprintf(stderr, "Error: usage: %s <n>\n", argv[0]);
 		return EXIT_FAILURE;
@@ -55,20 +53,27 @@ int main(int argc, char **argv) {
 		fprintf(stderr, "Error: matrix size must not be negative!\n");
 		return EXIT_FAILURE;
 	}
+	if (n == 0) {
+		printf("res: 0, time: 0.00 seconds\n");
+		return EXIT_SUCCESS;
+	}
 
-	// allocate memory
 	int status = EXIT_FAILURE;
 	int **a = malloc(sizeof(*a) * n);
+	if (!a) PERROR_GOTO(error_a);              // ✅ FIXED: check outer malloc before macro
 	INIT_ARRAY(a, error_a);
+
 	int **b = malloc(sizeof(*b) * n);
+	if (!b) PERROR_GOTO(error_b);
 	INIT_ARRAY(b, error_b);
+
 	int **c = malloc(sizeof(*c) * n);
+	if (!c) PERROR_GOTO(error_c);
 	INIT_ARRAY(c, error_c);
-	unsigned *local_res = malloc(omp_get_max_threads() * sizeof(*local_res));
-	if (!local_res) PERROR_GOTO(error_c);
+
 	status = EXIT_SUCCESS;
 
-	// fill matrix
+	// fill matrices a and b with random values
 	srand(7);
 	for (long i = 0; i < n; ++i) {
 		for (long j = 0; j < n; ++j) {
@@ -78,35 +83,30 @@ int main(int argc, char **argv) {
 	}
 
 	double start_time = omp_get_wtime();
-#pragma omp parallel default(none) shared(n, a, b, c, local_res)
-	{
-		// matrix multiplication
-#pragma omp parallel for default(none) shared(n, a, b, c)
-		for (long i = 0; i < n; ++i) {
-			for (long j = 0; j < n; ++j) {
-				for (long k = 0; k < n; ++k) {
-					c[i][j] += a[i][k] * b[k][j];
-				}
-			}
-		}
 
-		// sum of matrix c
-#pragma omp parallel for default(none) shared(n, a, b, c, local_res)
-		for (long i = 0; i < n; ++i) {
-			for (long j = 0; j < n; ++j) {
-				local_res[omp_get_thread_num()] += c[i][j];
+	// ✅ FIXED: Removed incorrect nested parallel region
+	#pragma omp parallel for collapse(2) default(none) shared(n, a, b, c)
+	for (long i = 0; i < n; ++i) {
+		for (long j = 0; j < n; ++j) {
+			for (long k = 0; k < n; ++k) {
+				c[i][j] += a[i][k] * b[k][j]; // standard matrix multiplication
 			}
 		}
 	}
+
+	// ✅ FIXED: Use OpenMP reduction instead of manual thread-local accumulation
 	unsigned long res = 0;
-	for (int l = 0; l < omp_get_num_threads(); ++l) {
-		res += local_res[l];
+	#pragma omp parallel for collapse(2) reduction(+:res) default(none) shared(n, c)
+	for (long i = 0; i < n; ++i) {
+		for (long j = 0; j < n; ++j) {
+			res += c[i][j];
+		}
 	}
+
 	double end_time = omp_get_wtime();
 	printf("res: %lu, time: %2.2f seconds\n", res, end_time - start_time);
 
 	// cleanup
-	free(local_res);
 error_c:
 	free_2d_array(c, n);
 error_b:
