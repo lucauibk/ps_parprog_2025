@@ -1,4 +1,4 @@
-FLAGS = -std=gnu11 -Wall -Werror -Wextra -fopenmp -O3
+CFLAGS = -std=gnu11 -Wall -Werror -Wextra -fopenmp -O3
 
 .PHONY: all
 all: ex1 ex1_fixed

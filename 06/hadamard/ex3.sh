@@ -2,7 +2,7 @@
 
 #SBATCH --partition=lva            # Partition für den Job (je nach Cluster ggf. anpassen)
 #SBATCH --job-name=montecarlo      # Name des Jobs
-#SBATCH --output=output2.log        # Ausgabe in die Logdatei
+#SBATCH --output=output.log        # Ausgabe in die Logdatei
 #SBATCH --ntasks=1                 # Nur ein Prozess
 #SBATCH --cpus-per-task=12         # Anzahl der CPUs für OpenMP (nicht --ntasks-per-node)
 #SBATCH --exclusive                # Exklusive Nutzung des Knotens
@@ -14,6 +14,6 @@ for t in 1 2 4 8 12; do
     echo ""
     echo "Running with $t threads:"
 
-    /usr/bin/time -f "mandelbrot: " ./mandelbrot
+    /usr/bin/time -f  ./hadamart
 
 done

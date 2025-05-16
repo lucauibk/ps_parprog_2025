@@ -1,0 +1,20 @@
+
+Running with 1 threads:
+Time: 9.8499 seconds
+mandelbrot: 
+
+Running with 2 threads:
+Time: 4.9067 seconds
+mandelbrot: 
+
+Running with 4 threads:
+Time: 2.4595 seconds
+mandelbrot: 
+
+Running with 8 threads:
+Time: 1.2779 seconds
+mandelbrot: 
+
+Running with 12 threads:
+Time: 0.8527 seconds
+mandelbrot: 

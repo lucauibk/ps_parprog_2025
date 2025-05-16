@@ -1,0 +1,30 @@
+Running with 1 threads
+version 1:
+res: 35309705, time: 27.67 seconds
+version 2:
+res: 545496156297, time: 27.75 seconds
+-----------------------------------
+Running with 2 threads
+version 1:
+res: 993191653, time: 28.01 seconds
+version 2:
+res: 545496156297, time: 13.98 seconds
+-----------------------------------
+Running with 4 threads
+version 1:
+res: 3976391740, time: 28.45 seconds
+version 2:
+res: 545496156297, time: 7.20 seconds
+-----------------------------------
+Running with 8 threads
+version 1:
+res: 1616876134, time: 28.99 seconds
+version 2:
+res: 545496156297, time: 3.63 seconds
+-----------------------------------
+Running with 12 threads
+version 1:
+res: 4132471339, time: 29.45 seconds
+version 2:
+res: 545496156297, time: 2.65 seconds
+-----------------------------------
