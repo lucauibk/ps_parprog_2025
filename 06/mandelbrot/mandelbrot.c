@@ -15,7 +15,7 @@
 
 void calc_mandelbrot(uint8_t image[Y][X]) {
 	//iterate over each pixel
-    #pragma omp parallel for schedule(dynamic)
+    #pragma omp parallel for collapse(2) schedule(dynamic)
     for (int py = 0; py < Y; py++) {
         for (int px = 0; px < X; px++) {
             double x = 0.0, y = 0.0;
