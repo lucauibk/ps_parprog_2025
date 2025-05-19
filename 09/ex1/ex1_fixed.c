@@ -14,7 +14,7 @@
 #define INIT_ARRAY(arr, label) \
 	do { \
 		for (long i = 0; i < n; ++i) { \
-			(arr)[i] = calloc(n, sizeof(**(arr))); /* ✅ FIXED: calloc ensures zero-initialized matrix */ \
+			(arr)[i] = calloc(n, sizeof(**(arr))); /* FIXED: calloc ensures zero-initialized matrix */ \
 			if (!(arr)[i]) PERROR_GOTO(label); \
 		} \
 	} while (0)
@@ -60,7 +60,7 @@ int main(int argc, char **argv) {
 
 	int status = EXIT_FAILURE;
 	int **a = malloc(sizeof(*a) * n);
-	if (!a) PERROR_GOTO(error_a);              // ✅ FIXED: check outer malloc before macro
+	if (!a) PERROR_GOTO(error_a);              // FIXED: check outer malloc before macro
 	INIT_ARRAY(a, error_a);
 
 	int **b = malloc(sizeof(*b) * n);
@@ -75,12 +75,16 @@ int main(int argc, char **argv) {
 
 	// fill matrices a and b with random values
 	srand(7);
-	for (long i = 0; i < n; ++i) {
-		for (long j = 0; j < n; ++j) {
-			a[i][j] = rand();
-			b[i][j] = rand();
-		}
-	}
+    #pragma omp parallel
+{
+    unsigned int seed = 7 + omp_get_thread_num(); // individueller Seed
+    #pragma omp for
+    for (long i = 0; i < n * n; ++i) {
+        a[i] = rand_r(&seed);
+        b[i] = rand_r(&seed);
+    }
+}
+
 
 	double start_time = omp_get_wtime();
 
