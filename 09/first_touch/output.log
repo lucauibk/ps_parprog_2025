@@ -1,0 +1,6 @@
+Running
+Memory allocation time: 0.104771 seconds
+Matrix initialization time: 0.855911 seconds
+Matrix computation time: 0.333975 seconds
+Sum of matrix elements: 63998400000000
+Memory deallocation time: 1.050926 seconds

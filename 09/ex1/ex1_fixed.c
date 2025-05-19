@@ -75,15 +75,18 @@ int main(int argc, char **argv) {
 
 	// fill matrices a and b with random values
 	srand(7);
-    #pragma omp parallel
-{
-    unsigned int seed = 7 + omp_get_thread_num(); // individueller Seed
-    #pragma omp for
-    for (long i = 0; i < n * n; ++i) {
-        a[i] = rand_r(&seed);
-        b[i] = rand_r(&seed);
-    }
-}
+	#pragma omp parallel
+	{
+		unsigned int seed = 7 + omp_get_thread_num();
+		#pragma omp for collapse(2)
+		for (long i = 0; i < n; ++i) {
+			for (long j = 0; j < n; ++j) {
+				a[i][j] = rand_r(&seed);
+				b[i][j] = rand_r(&seed);
+			}
+		}
+	}
+	
 
 
 	double start_time = omp_get_wtime();
