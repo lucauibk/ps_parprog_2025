@@ -74,6 +74,7 @@ int main(int argc, char **argv) {
 	status = EXIT_SUCCESS;
 
 	// fill matrices a and b with random values
+	// FIXED: made random number generation thread-safe
 	srand(7);
 	#pragma omp parallel
 	{
@@ -90,23 +91,17 @@ int main(int argc, char **argv) {
 
 
 	double start_time = omp_get_wtime();
-
-	// ✅ FIXED: Removed incorrect nested parallel region
-	#pragma omp parallel for collapse(2) default(none) shared(n, a, b, c)
-	for (long i = 0; i < n; ++i) {
-		for (long j = 0; j < n; ++j) {
-			for (long k = 0; k < n; ++k) {
-				c[i][j] += a[i][k] * b[k][j]; // standard matrix multiplication
-			}
-		}
-	}
-
-	// ✅ FIXED: Use OpenMP reduction instead of manual thread-local accumulation
+	// FIXED: Moved the summation of the result into the parallel region
+	// FIXED: Removed incorrect nested parallel region
+	// FIXED: Use OpenMP reduction instead of manual thread-local accumulation
 	unsigned long res = 0;
-	#pragma omp parallel for collapse(2) reduction(+:res) default(none) shared(n, c)
-	for (long i = 0; i < n; ++i) {
-		for (long j = 0; j < n; ++j) {
-			res += c[i][j];
+	#pragma omp parallel for reduction(+:res) default(none) shared(n, a, b, c)
+	for(long i = 0; i < n; ++i;){
+		for(long k = 0; k < n; ++k){
+			for(long j = 0; j < n; ++j){
+				c[i][j] += a[i][k] * b[k][j]; // standard matrix multiplication
+				res += c[i][j];
+			}
 		}
 	}
 
@@ -114,6 +109,7 @@ int main(int argc, char **argv) {
 	printf("res: %lu, time: %2.2f seconds\n", res, end_time - start_time);
 
 	// cleanup
+	free(local_res);
 error_c:
 	free_2d_array(c, n);
 error_b:
