@@ -38,6 +38,7 @@ for that assignment have to be handed in via OLAT by 17:00 on the previous day
 | 2025-05-06 | [7](07)    | Dependence Analysis                                         |
 | 2025-05-13 | [8](08)    | Auto-vectorization, dependence analysis                     |
 | 2025-05-20 | [9](09)    | General OpenMP parallelism and first touch                  |
+| 2025-05-27 | [10](10)   | OpenMP affinity and tasks                                   |
 
 ## General Information
 
