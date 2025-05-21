@@ -87,9 +87,6 @@ int main(int argc, char **argv) {
 			}
 		}
 	}
-	
-
-
 	double start_time = omp_get_wtime();
 	// FIXED: Moved the summation of the result into the parallel region
 	// FIXED: Removed incorrect nested parallel region

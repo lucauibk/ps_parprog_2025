@@ -62,7 +62,7 @@ int main(int argc, char **argv) {
 	INIT_ARRAY(a, error_a);
 	int **b = malloc(sizeof(*b) * n);
 	INIT_ARRAY(b, error_b);
-	int **c = malloc(sizeof(*c) * n);
+	int **c = calloc(sizeof(*c) * n);
 	INIT_ARRAY(c, error_c);
 	unsigned *local_res = malloc(omp_get_max_threads() * sizeof(*local_res));
 	if (!local_res) PERROR_GOTO(error_c);
