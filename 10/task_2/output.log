@@ -36,6 +36,7 @@ Time: 0.001791 seconds
 --- Sequential Version (1 Thread) ---
 Delannoy(14, 14) = 7923848253
 Time: 25.750511 seconds
+<<<<<<< HEAD
 --- Parallel Version (1 Thread) ---
 Delannoy(14, 14) = 7923848253
 Time: 277.922787 seconds
@@ -43,3 +44,6 @@ Time: 277.922787 seconds
 Delannoy(14, 14) = 7923848253
 Time: 277.330055 seconds
 
+=======
+--- Parallel Version (1 Thread) ---
+>>>>>>> bed58bb1aced9586201fa87a066503134020bc40
