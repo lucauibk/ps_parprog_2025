@@ -15,10 +15,15 @@
 
 module load gcc/12.2.0
 
+N = 500000000
 export OMP_NUM_THREADS=6
 export OMP_PLACES=cores
 export OMP_PROC_BIND=spread
 
-# Execute the program
-echo "Running task 1"
-./task1
+echo "Running task 1 with OMP_NUM_THREADS=6, OMP_PLACES=cores, and OMP_PROC_BIND=spread"
+./task1 $N
+
+export OMP_PROC_BIND=close
+export OMP_PLACES="{0},{1},{2},{3},{4},{5}"
+echo "Running task 1 with OMP_PROC_BIND=close and OMP_PLACES set"
+./task1 $N
