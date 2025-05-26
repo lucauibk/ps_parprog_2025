@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <omp.h>
 
 unsigned long long delannoy(int m, int n) {
     if(m == 0 || n == 0){

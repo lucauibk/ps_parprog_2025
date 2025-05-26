@@ -1,0 +1,45 @@
+ERROR: Unable to locate a modulefile for 'gcc/12.2.0'
+### N = 2 ###
+--- Sequential Version (1 Thread) ---
+Delannoy(2, 2) = 13
+Time: 0.000000 seconds
+--- Parallel Version (1 Thread) ---
+Delannoy(2, 2) = 13
+Time: 0.000002 seconds
+--- Parallel Version (12 Threads) ---
+Delannoy(2, 2) = 13
+Time: 0.000012 seconds
+
+### N = 4 ###
+--- Sequential Version (1 Thread) ---
+Delannoy(4, 4) = 321
+Time: 0.000003 seconds
+--- Parallel Version (1 Thread) ---
+Delannoy(4, 4) = 321
+Time: 0.000025 seconds
+--- Parallel Version (12 Threads) ---
+Delannoy(4, 4) = 321
+Time: 0.000032 seconds
+
+### N = 7 ###
+--- Sequential Version (1 Thread) ---
+Delannoy(7, 7) = 48639
+Time: 0.000213 seconds
+--- Parallel Version (1 Thread) ---
+Delannoy(7, 7) = 48639
+Time: 0.001808 seconds
+--- Parallel Version (12 Threads) ---
+Delannoy(7, 7) = 48639
+Time: 0.001791 seconds
+
+### N = 14 ###
+--- Sequential Version (1 Thread) ---
+Delannoy(14, 14) = 7923848253
+Time: 25.750511 seconds
+--- Parallel Version (1 Thread) ---
+Delannoy(14, 14) = 7923848253
+Time: 277.922787 seconds
+--- Parallel Version (12 Threads) ---
+Delannoy(14, 14) = 7923848253
+Time: 277.330055 seconds
+

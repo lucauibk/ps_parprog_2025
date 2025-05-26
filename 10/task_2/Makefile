@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O3 -pthread -std=gnu11 -Wall -Wextra -lm
+CFLAGS = -O3 -pthread -fopenmp -std=gnu11 -Wall -Wextra -lm
 
 .PHONY: all clean
 all: delannoy_par delannoy_seq
