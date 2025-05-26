@@ -34,8 +34,15 @@ int main(int argc, char* argv[]){
         return 1;
     }
     int N = atoi(argv[1]);
+    long long result;
     double start = omp_get_wtime();
-    unsigned long long result = delannoy(N, N);
+    #pragma omp parallel
+    {
+        #pragma omp single
+        {
+            result = delannoy(N, N);
+        }
+    }
     double end = omp_get_wtime();
 
     printf("Delannoy(%d, %d) = %llu\n", N, N, result);

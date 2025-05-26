@@ -1,0 +1,8 @@
+Final counter value: 500000000
+Time taken: 17.697 seconds
+Running task 1 with OMP_NUM_THREADS=6, OMP_PLACES=cores, and OMP_PROC_BIND=spread
+Final counter value: 500000000
+Time taken: 18.165 seconds
+Running task 1 with OMP_PROC_BIND=close and OMP_PLACES set
+Final counter value: 500000000
+Time taken: 9.702 seconds

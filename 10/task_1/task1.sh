@@ -13,10 +13,9 @@
 # Enforce exclusive node allocation, do not share with other jobs
 #SBATCH --exclusive
 
-module load gcc/12.2.0
-
-N = 500000000
+N=500000000
 export OMP_NUM_THREADS=6
+./task1 $N
 export OMP_PLACES=cores
 export OMP_PROC_BIND=spread
 

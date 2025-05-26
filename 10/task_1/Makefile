@@ -2,8 +2,8 @@
 
 CC = gcc
 CFLAGS = -O3 -fopenmp
-TARGET = atomic_counter
-SRC = atomic_counter.c
+TARGET = task1
+SRC = task1.c
 
 .PHONY: all clean run
 

@@ -9,7 +9,7 @@
 
 module load gcc/12.2.0
 
-Ns=(2 4 7 14)
+Ns=(2 4 7 12)
 
 for N in "${Ns[@]}"
 do
