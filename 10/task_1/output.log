@@ -6,3 +6,11 @@ Time taken: 18.165 seconds
 Running task 1 with OMP_PROC_BIND=close and OMP_PLACES set
 Final counter value: 500000000
 Time taken: 9.702 seconds
+
+
+OMP_PLACES=cores: Threads werden auf einzelne physische Kerne gesetzt.
+OMP_PROC_BIND=spread: Threads werden möglichst weit über die verfügbaren Kerne verteilt → 
+bessere Cache-Ausnutzung, geringere Interferenzen.
+OMP_PROC_BIND=close: Threads werden möglichst nah zueinander platziert → 
+besser für gemeinsamen Cache-Zugriff, z. B. wenn Threads oft synchronisieren.
+OMP_PLACES="{0},{1},{2},{3},{4},{5}": Manuelle Platzierung auf spezifische Cores → volle Kontrolle, z. B. alle auf CPU 0 oder verteilt über zwei CPUs.

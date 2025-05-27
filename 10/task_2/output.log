@@ -40,3 +40,14 @@ Time: 0.814216 seconds
 Delannoy(12, 12) = 251595969
 Time: 37.183260 seconds
 --- Parallel Version (12 Threads) ---
+
+
+Exponentielle Anzahl an rekursiven Aufrufen – selbst die parallele Version erzeugt viele kleine Tasks.
+Die Berechnungen sind nicht memoisiert → viele identische Teilergebnisse werden mehrfach berechnet.
+Task-Overhead: Für kleine m und n ist der Overhead der #pragma omp task größer als die tatsächliche Rechenzeit.
+Verbesserung (ohne Algorithmus zu ändern):
+Cutoff einführen, z.B.:
+if (m + n < CUTOFF) {
+    return delannoy(m-1, n) + delannoy(m-1, n-1) + delannoy(m, n-1);
+}
+Nur für größere Teilprobleme Tasks erzeugen.
