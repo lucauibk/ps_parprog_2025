@@ -1,0 +1,8 @@
+
+Frage	Antwort
+Was beobachtest du bei Performance bei Größe 2048?	OpenMP SIMD langsamer als sequenziell und Compiler-vectorized. Resultat ist korrekt.
+Ist das Ergebnis korrekt?	Ja, die Summen stimmen überein.
+Was zeigt perf?	OpenMP SIMD hat mehr Zyklen und Instruktionen, Frontend-Stalls höher, was auf ineffiziente Nutzung hinweist.
+Was passiert bei Wechsel von float auf double?	Double OpenMP SIMD Version ist schneller als float SIMD, aber immer noch langsamer als sequenziell.
+Vergleich Exercise 2 vs. 1 (Compiler Vectorization)	Compiler vectorization ist performanter; OpenMP SIMD portabler, aber evtl. ineffizient ohne Threads.
+Vorteile/Nachteile der Lösungen:	Manuelle Intrinsics (Ex3) am performantesten, aber komplex; OpenMP SIMD (Ex2) portabler, aber langsamer; Compiler Vectorization einfach und gut optimiert

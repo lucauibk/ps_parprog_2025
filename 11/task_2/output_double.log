@@ -1,0 +1,25 @@
+Benchmarking OpenMP SIMD version
+
+Elapsed time: 1.8037 seconds
+Verification: sum(a) = 12288002048.000000
+
+ Performance counter stats for './simd 2048 1000000':
+
+          1,804.16 msec task-clock:u              #    0.998 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+                58      page-faults:u             #   32.148 /sec                   
+     5,467,729,916      cycles:u                  #    3.031 GHz                      (83.32%)
+     2,340,577,509      stalled-cycles-frontend:u #   42.81% frontend cycles idle     (83.32%)
+       560,001,310      stalled-cycles-backend:u  #   10.24% backend cycles idle      (66.65%)
+     9,228,326,772      instructions:u            #    1.69  insn per cycle         
+                                                  #    0.25  stalled cycles per insn  (83.34%)
+     1,029,027,541      branches:u                #  570.363 M/sec                    (83.37%)
+         1,000,798      branch-misses:u           #    0.10% of all branches          (83.34%)
+
+       1.807423172 seconds time elapsed
+
+       1.789576000 seconds user
+       0.001989000 seconds sys
+
+

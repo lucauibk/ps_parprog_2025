@@ -1,0 +1,25 @@
+Benchmarking xmint version
+
+Elapsed time: 0.6795 seconds
+Verification: sum(a) = 12287900672.000000
+
+ Performance counter stats for './vec_xmint 2048 1000000':
+
+            679.95 msec task-clock:u              #    0.971 CPUs utilized          
+                 0      context-switches:u        #    0.000 /sec                   
+                 0      cpu-migrations:u          #    0.000 /sec                   
+                53      page-faults:u             #   77.947 /sec                   
+     2,057,357,664      cycles:u                  #    3.026 GHz                      (83.24%)
+        19,430,765      stalled-cycles-frontend:u #    0.94% frontend cycles idle     (83.30%)
+        11,255,322      stalled-cycles-backend:u  #    0.55% backend cycles idle      (66.77%)
+     3,592,398,092      instructions:u            #    1.75  insn per cycle         
+                                                  #    0.01  stalled cycles per insn  (83.38%)
+       515,200,214      branches:u                #  757.703 M/sec                    (83.39%)
+         1,000,881      branch-misses:u           #    0.19% of all branches          (83.31%)
+
+       0.700506660 seconds time elapsed
+
+       0.673908000 seconds user
+       0.001988000 seconds sys
+
+
