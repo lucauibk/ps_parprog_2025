@@ -20,14 +20,14 @@ echo "Compiling..."
 make
 
 echo -e "\nRunning baseline:"
-./baseline $SIZE $REPS
+./vec_baseline $SIZE $REPS
 
 echo -e "\nRunning auto_vectorized:"
 ./auto_vectorized $SIZE $REPS
 
 echo -e "\nMeasuring with perf (SSE Single Precision):"
 echo -e "\nBaseline:"
-perf stat -e r4010 ./baseline $SIZE $REPS
+perf stat -e r4010 ./vec_baseline $SIZE $REPS
 
 echo -e "\nAuto-vectorized:"
 perf stat -e r4010 ./auto_vectorized $SIZE $REPS

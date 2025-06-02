@@ -1,0 +1,43 @@
+Compiling...
+gcc -O1 -o vec_baseline vec_baseline.c
+gcc -O1 -ftree-vectorize -o auto_vectorized vec_baseline.c
+
+Running baseline:
+Elapsed time: 2.6805 seconds
+Verification: sum(a) = 12287900672.000000
+
+Running auto_vectorized:
+Elapsed time: 0.5144 seconds
+Verification: sum(a) = 12287900672.000000
+
+Measuring with perf (SSE Single Precision):
+
+Baseline:
+Elapsed time: 2.6975 seconds
+Verification: sum(a) = 12287900672.000000
+
+ Performance counter stats for './vec_baseline 2048 1000000':
+
+     4,096,172,587      r4010:u                                                     
+
+       2.699903837 seconds time elapsed
+
+       2.692747000 seconds user
+       0.001992000 seconds sys
+
+
+
+Auto-vectorized:
+Elapsed time: 0.5158 seconds
+Verification: sum(a) = 12287900672.000000
+
+ Performance counter stats for './auto_vectorized 2048 1000000':
+
+     1,024,013,419      r4010:u                                                     
+
+       0.518747484 seconds time elapsed
+
+       0.516454000 seconds user
+       0.000000000 seconds sys
+
+
