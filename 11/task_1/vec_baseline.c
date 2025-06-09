@@ -29,6 +29,7 @@ int main(int argc, char** argv) {
     int size = (argc > 1) ? atoi(argv[1]) : 2048;
     int repetitions = (argc > 2) ? atoi(argv[2]) : 1000000;
 
+
     float* a = aligned_alloc(64, size * sizeof(float));
     float* b = aligned_alloc(64, size * sizeof(float));
     float* c = aligned_alloc(64, size * sizeof(float));
