@@ -1,0 +1,379 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  5.77      0.42     0.42                             resid (real.c:526 @ 4055f2)
+  5.36      0.81     0.39                             resid (real.c:530 @ 405799)
+  4.81      1.16     0.35                             resid (real.c:538 @ 4057ce)
+  3.92      1.45     0.29                             resid (real.c:526 @ 4055d1)
+  3.71      1.72     0.27                             resid (real.c:524 @ 4055dc)
+  3.57      1.98     0.26                             psinv (real.c:464 @ 406088)
+  2.89      2.19     0.21                             vranlc (randdp.c:132 @ 40a751)
+  1.92      2.33     0.14                             psinv (real.c:468 @ 406250)
+  1.79      2.46     0.13                             resid (real.c:524 @ 4055bc)
+  1.79      2.59     0.13                             resid (real.c:537 @ 405749)
+  1.65      2.71     0.12                             resid (real.c:523 @ 4055b0)
+  1.51      2.82     0.11                             vranlc (randdp.c:133 @ 40a765)
+  1.51      2.93     0.11                             vranlc (randdp.c:135 @ 40a77a)
+  1.51      3.04     0.11                             vranlc (randdp.c:136 @ 40a78e)
+  1.44      3.14     0.11                             rprj3 (real.c:606 @ 406dd6)
+  1.44      3.25     0.11                             resid (real.c:525 @ 4055e9)
+  1.37      3.35     0.10                             resid (real.c:537 @ 4057ca)
+  1.37      3.45     0.10                             psinv (real.c:466 @ 406163)
+  1.31      3.54     0.10                             rprj3 (real.c:607 @ 406dcc)
+  1.24      3.63     0.09                             psinv (real.c:464 @ 4060ac)
+  1.24      3.72     0.09                             resid (real.c:522 @ 405500)
+  1.10      3.80     0.08                             vranlc (randdp.c:134 @ 40a771)
+  1.03      3.88     0.08                             interp (real.c:692 @ 40804d)
+  1.03      3.95     0.08                             interp (real.c:695 @ 408070)
+  1.03      4.03     0.08                             psinv (real.c:469 @ 406266)
+  1.03      4.10     0.08                             rprj3 (real.c:605 @ 406dac)
+  0.96      4.17     0.07                             rprj3 (real.c:604 @ 406db6)
+  0.96      4.24     0.07                             psinv (real.c:468 @ 40622f)
+  0.96      4.31     0.07                             resid (real.c:525 @ 4055cb)
+  0.96      4.38     0.07                             resid (real.c:523 @ 4055e4)
+  0.96      4.45     0.07                             resid (real.c:529 @ 4057d6)
+  0.89      4.52     0.07                             resid (real.c:537 @ 4057b4)
+  0.89      4.58     0.07                             resid (real.c:530 @ 4057c5)
+  0.89      4.65     0.07                             rprj3 (real.c:619 @ 40722c)
+  0.82      4.71     0.06                             interp (real.c:680 @ 407e46)
+  0.82      4.77     0.06                             psinv (real.c:462 @ 406074)
+  0.82      4.83     0.06                             psinv (real.c:462 @ 406093)
+  0.82      4.89     0.06                             psinv (real.c:461 @ 40609b)
+  0.82      4.95     0.06                             psinv (real.c:471 @ 40626a)
+  0.82      5.01     0.06                             resid (real.c:537 @ 4057c1)
+  0.76      5.06     0.06                             resid (real.c:538 @ 4057b0)
+  0.69      5.11     0.05                             comm3 (real.c:869 @ 402767)
+  0.69      5.16     0.05                             interp (real.c:670 @ 407c03)
+  0.69      5.21     0.05                             norm2u3 (real.c:826 @ 4024e0)
+  0.69      5.26     0.05                             norm2u3 (real.c:827 @ 4024f0)
+  0.69      5.31     0.05                             rprj3 (real.c:604 @ 406da0)
+  0.69      5.36     0.05                             vranlc (randdp.c:130 @ 40a732)
+  0.62      5.41     0.05                             psinv (real.c:460 @ 405fa8)
+  0.62      5.45     0.05                             psinv (real.c:471 @ 406262)
+  0.62      5.50     0.05                             rprj3 (real.c:617 @ 4071db)
+  0.62      5.54     0.05                             vranlc (randdp.c:129 @ 40a726)
+  0.62      5.59     0.05                             vranlc (randdp.c:131 @ 40a743)
+  0.55      5.63     0.04                             interp (real.c:674 @ 407d54)
+  0.55      5.67     0.04                             interp (real.c:677 @ 407d59)
+  0.55      5.71     0.04                             interp (real.c:686 @ 407f4e)
+  0.55      5.75     0.04                             psinv (real.c:463 @ 4060b4)
+  0.55      5.79     0.04                             resid (real.c:525 @ 4055fa)
+  0.55      5.83     0.04                             resid (real.c:528 @ 405697)
+  0.55      5.87     0.04                             resid (real.c:530 @ 40578e)
+  0.55      5.91     0.04                             rprj3 (real.c:610 @ 406def)
+  0.55      5.95     0.04                             rprj3 (real.c:618 @ 4071ba)
+  0.55      5.99     0.04                             vranlc (randdp.c:128 @ 40a71d)
+  0.55      6.03     0.04                             vranlc (randdp.c:131 @ 40a74d)
+  0.48      6.06     0.04                             psinv (real.c:471 @ 406256)
+  0.48      6.10     0.04                             psinv (real.c:467 @ 40626e)
+  0.48      6.13     0.04                             psinv (real.c:461 @ 406068)
+  0.48      6.17     0.04                             psinv (real.c:471 @ 40623f)
+  0.48      6.20     0.04                             psinv (real.c:468 @ 406243)
+  0.48      6.24     0.04                             vranlc (randdp.c:131 @ 40a73a)
+  0.48      6.27     0.04                             zran3 (real.c:970 @ 403587)
+  0.41      6.30     0.03                             interp (real.c:667 @ 407b58)
+  0.41      6.33     0.03                             vranlc (randdp.c:134 @ 40a748)
+  0.41      6.36     0.03                             comm3 (real.c:877 @ 402854)
+  0.41      6.39     0.03                             resid (real.c:538 @ 405ace)
+  0.34      6.42     0.03                             interp (real.c:683 @ 407e69)
+  0.34      6.44     0.03                             interp (real.c:688 @ 407f85)
+  0.27      6.46     0.02                             comm3 (real.c:870 @ 402782)
+  0.27      6.48     0.02                             comm3 (real.c:883 @ 402a18)
+  0.27      6.50     0.02                             interp (real.c:682 @ 407e7d)
+  0.27      6.52     0.02                             interp (real.c:694 @ 408083)
+  0.27      6.54     0.02                             psinv (real.c:463 @ 406082)
+  0.27      6.56     0.02                             resid (real.c:523 @ 4055c7)
+  0.27      6.58     0.02                             resid (real.c:530 @ 405aa2)
+  0.27      6.60     0.02                             rprj3 (real.c:614 @ 407167)
+  0.27      6.62     0.02                             rprj3 (real.c:618 @ 4071ee)
+  0.27      6.64     0.02                             vranlc (randdp.c:137 @ 40a79b)
+  0.21      6.66     0.02                             interp (real.c:695 @ 40803e)
+  0.21      6.67     0.02                             interp (real.c:693 @ 408048)
+  0.21      6.69     0.02                             interp (real.c:693 @ 408061)
+  0.21      6.70     0.02                             norm2u3 (real.c:826 @ 4024fc)
+  0.21      6.72     0.02                             resid (real.c:538 @ 405a66)
+  0.21      6.73     0.02                             resid (real.c:537 @ 405a71)
+  0.21      6.75     0.02                             rprj3 (real.c:606 @ 406dbf)
+  0.21      6.76     0.02                             rprj3 (real.c:620 @ 40724f)
+  0.21      6.78     0.02                             vranlc (randdp.c:131 @ 40a72a)
+  0.21      6.79     0.02                             vranlc (randdp.c:129 @ 40a72e)
+  0.21      6.81     0.02                             interp (real.c:681 @ 407e40)
+  0.21      6.82     0.02                             psinv (real.c:469 @ 40625a)
+  0.21      6.84     0.02                             resid (real.c:538 @ 4057b8)
+  0.21      6.85     0.02                             resid (real.c:528 @ 405add)
+  0.14      6.86     0.01                             comm3 (real.c:884 @ 402a23)
+  0.14      6.87     0.01                             interp (real.c:668 @ 407beb)
+  0.14      6.88     0.01                             interp (real.c:669 @ 407bfe)
+  0.14      6.89     0.01                             interp (real.c:670 @ 407c0e)
+  0.14      6.90     0.01                             interp (real.c:677 @ 407d73)
+  0.14      6.91     0.01                             interp (real.c:673 @ 407e09)
+  0.14      6.92     0.01                             interp (real.c:689 @ 407f71)
+  0.14      6.93     0.01                             interp (real.c:693 @ 40806c)
+  0.14      6.94     0.01                             psinv (real.c:463 @ 4060a3)
+  0.14      6.95     0.01                             psinv (real.c:460 @ 4060bc)
+  0.14      6.96     0.01                             psinv (real.c:470 @ 406238)
+  0.14      6.97     0.01                             psinv (real.c:468 @ 40625e)
+  0.14      6.98     0.01                             psinv (real.c:467 @ 406315)
+  0.14      6.99     0.01                             resid (real.c:537 @ 40579f)
+  0.14      7.00     0.01                             resid (real.c:530 @ 4057bc)
+  0.14      7.01     0.01                             resid (real.c:528 @ 4057db)
+  0.14      7.02     0.01                             resid (real.c:537 @ 405a39)
+  0.14      7.03     0.01                             resid (real.c:537 @ 405ab4)
+  0.14      7.04     0.01                             resid (real.c:530 @ 405ac2)
+  0.14      7.05     0.01                             resid (real.c:537 @ 405ac6)
+  0.14      7.06     0.01                             rprj3 (real.c:602 @ 406ddf)
+  0.14      7.07     0.01                             rprj3 (real.c:619 @ 407160)
+  0.14      7.08     0.01                             rprj3 (real.c:619 @ 407185)
+  0.14      7.09     0.01                             rprj3 (real.c:612 @ 4071f6)
+  0.14      7.10     0.01                             rprj3 (real.c:612 @ 407227)
+  0.14      7.11     0.01                             rprj3 (real.c:616 @ 40726a)
+  0.14      7.12     0.01                             rprj3 (real.c:610 @ 40726f)
+  0.14      7.13     0.01                             vranlc (randdp.c:122 @ 40a6e9)
+  0.14      7.14     0.01                             vranlc (randdp.c:128 @ 40a710)
+  0.14      7.15     0.01                             zran3 (real.c:970 @ 403555)
+  0.07      7.16     0.01                             interp (real.c:683 @ 407e32)
+  0.07      7.16     0.01                             interp (real.c:679 @ 407e94)
+  0.07      7.17     0.01                             interp (real.c:685 @ 407f9c)
+  0.07      7.17     0.01                             interp (real.c:692 @ 408065)
+  0.07      7.18     0.01                             norm2u3 (real.c:825 @ 4024d0)
+  0.07      7.18     0.01                             psinv (real.c:461 @ 40607e)
+  0.07      7.19     0.01                             psinv (real.c:466 @ 406273)
+  0.07      7.19     0.01                             resid (real.c:529 @ 405ad6)
+  0.07      7.20     0.01                             rprj3 (real.c:615 @ 407193)
+  0.07      7.20     0.01                             rprj3 (real.c:620 @ 4071a2)
+  0.07      7.21     0.01                             rprj3 (real.c:618 @ 4071d7)
+  0.07      7.21     0.01                             rprj3 (real.c:616 @ 407325)
+  0.07      7.22     0.01                             rprj3 (real.c:614 @ 40732f)
+  0.07      7.22     0.01                             vranlc (randdp.c:130 @ 40a73e)
+  0.07      7.23     0.01                             zran3 (real.c:969 @ 40357a)
+  0.00      7.23     0.00   131642     0.00     0.00  randlc (randdp.c:5 @ 40a5e0)
+  0.00      7.23     0.00   131072     0.00     0.00  vranlc (randdp.c:72 @ 40a6b0)
+  0.00      7.23     0.00      493     0.00     0.00  norm2u3 (real.c:808 @ 4023f0)
+  0.00      7.23     0.00      168     0.00     0.00  psinv (real.c:449 @ 405d50)
+  0.00      7.23     0.00      147     0.00     0.00  interp (real.c:651 @ 407900)
+  0.00      7.23     0.00      147     0.00     0.00  resid (real.c:511 @ 405290)
+  0.00      7.23     0.00      147     0.00     0.00  rprj3 (real.c:570 @ 4067d0)
+  0.00      7.23     0.00        4     0.00     0.00  wtime_ (wtime.c:8 @ 401800)
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.14% of 7.23 seconds
+
+index % time    self  children    called     name
+                0.00    0.00       2/131642      zran3 (real.c:927 @ 402db0) [2117]
+                0.00    0.00       4/131642      power (real.c:1135 @ 402bb9) [1309]
+                0.00    0.00      52/131642      power (real.c:1136 @ 402ba0) [1306]
+                0.00    0.00     512/131642      zran3 (real.c:935 @ 402df9) [2124]
+                0.00    0.00  131072/131642      zran3 (real.c:946 @ 402ec8) [2135]
+[146]    0.0    0.00    0.00  131642         randlc (randdp.c:5 @ 40a5e0) [146]
+-----------------------------------------------
+                0.00    0.00  131072/131072      zran3 (real.c:943 @ 402ebf) [2133]
+[147]    0.0    0.00    0.00  131072         vranlc (randdp.c:72 @ 40a6b0) [147]
+-----------------------------------------------
+                0.00    0.00       2/493         zran3 (real.c:915 @ 402c7c) [2100]
+                0.00    0.00       2/493         zran3 (real.c:916 @ 402c8f) [2103]
+                0.00    0.00       2/493         zran3 (real.c:922 @ 402d6e) [2109]
+                0.00    0.00       2/493         zran3 (real.c:1086 @ 404729) [2222]
+                0.00    0.00     147/493         rprj3 (real.c:627 @ 407562) [1680]
+                0.00    0.00     168/493         psinv (real.c:485 @ 40639c) [1384]
+                0.00    0.00     170/493         resid (real.c:547 @ 405910) [1510]
+[148]    0.0    0.00    0.00     493         norm2u3 (real.c:808 @ 4023f0) [148]
+-----------------------------------------------
+                0.00    0.00      21/168         mg3P (real.c:406 @ 40a368) [1247]
+                0.00    0.00      21/168         mg3P (real.c:432 @ 40a5ad) [1261]
+                0.00    0.00     126/168         mg3P (real.c:425 @ 40a4e7) [1255]
+[149]    0.0    0.00    0.00     168         psinv (real.c:449 @ 405d50) [149]
+-----------------------------------------------
+                0.00    0.00      21/147         mg3P (real.c:430 @ 40a546) [1259]
+                0.00    0.00     126/147         mg3P (real.c:415 @ 40a460) [1253]
+[150]    0.0    0.00    0.00     147         interp (real.c:651 @ 407900) [150]
+-----------------------------------------------
+                0.00    0.00      21/147         mg3P (real.c:431 @ 40a588) [1260]
+                0.00    0.00     126/147         mg3P (real.c:420 @ 40a4a4) [1254]
+[151]    0.0    0.00    0.00     147         resid (real.c:511 @ 405290) [151]
+-----------------------------------------------
+                0.00    0.00     147/147         mg3P (real.c:397 @ 40a25f) [1241]
+[152]    0.0    0.00    0.00     147         rprj3 (real.c:570 @ 4067d0) [152]
+-----------------------------------------------
+                0.00    0.00       2/4           timer_start (c_timers.c:48 @ 40a8d0) [2019]
+                0.00    0.00       2/4           elapsed_time (c_timers.c:22 @ 40a910) [541]
+[153]    0.0    0.00    0.00       4         wtime_ (wtime.c:8 @ 401800) [153]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [42] comm3 (real.c:869 @ 402767) [18] psinv (real.c:466 @ 406163) [138] resid (real.c:529 @ 405ad6)
+  [77] comm3 (real.c:870 @ 402782) [28] psinv (real.c:468 @ 40622f) [100] resid (real.c:528 @ 405add)
+  [73] comm3 (real.c:877 @ 402854) [111] psinv (real.c:470 @ 406238) [152] rprj3 (real.c:570 @ 4067d0)
+  [78] comm3 (real.c:883 @ 402a18) [67] psinv (real.c:471 @ 40623f) [46] rprj3 (real.c:604 @ 406da0)
+ [101] comm3 (real.c:884 @ 402a23) [68] psinv (real.c:468 @ 406243) [26] rprj3 (real.c:605 @ 406dac)
+ [150] interp (real.c:651 @ 407900) [8] psinv (real.c:468 @ 406250) [27] rprj3 (real.c:604 @ 406db6)
+  [71] interp (real.c:667 @ 407b58) [64] psinv (real.c:471 @ 406256) [93] rprj3 (real.c:606 @ 406dbf)
+ [102] interp (real.c:668 @ 407beb) [98] psinv (real.c:469 @ 40625a) [19] rprj3 (real.c:607 @ 406dcc)
+ [103] interp (real.c:669 @ 407bfe) [112] psinv (real.c:468 @ 40625e) [15] rprj3 (real.c:606 @ 406dd6)
+  [43] interp (real.c:670 @ 407c03) [49] psinv (real.c:471 @ 406262) [121] rprj3 (real.c:602 @ 406ddf)
+ [104] interp (real.c:670 @ 407c0e) [25] psinv (real.c:469 @ 406266) [60] rprj3 (real.c:610 @ 406def)
+  [53] interp (real.c:674 @ 407d54) [39] psinv (real.c:471 @ 40626a) [122] rprj3 (real.c:619 @ 407160)
+  [54] interp (real.c:677 @ 407d59) [65] psinv (real.c:467 @ 40626e) [84] rprj3 (real.c:614 @ 407167)
+ [105] interp (real.c:677 @ 407d73) [137] psinv (real.c:466 @ 406273) [123] rprj3 (real.c:619 @ 407185)
+ [106] interp (real.c:673 @ 407e09) [113] psinv (real.c:467 @ 406315) [139] rprj3 (real.c:615 @ 407193)
+ [131] interp (real.c:683 @ 407e32) [146] randlc (randdp.c:5 @ 40a5e0) [140] rprj3 (real.c:620 @ 4071a2)
+  [97] interp (real.c:681 @ 407e40) [151] resid (real.c:511 @ 405290) [61] rprj3 (real.c:618 @ 4071ba)
+  [35] interp (real.c:680 @ 407e46) [21] resid (real.c:522 @ 405500) [141] rprj3 (real.c:618 @ 4071d7)
+  [75] interp (real.c:683 @ 407e69) [11] resid (real.c:523 @ 4055b0) [50] rprj3 (real.c:617 @ 4071db)
+  [79] interp (real.c:682 @ 407e7d) [9] resid (real.c:524 @ 4055bc) [85] rprj3 (real.c:618 @ 4071ee)
+ [132] interp (real.c:679 @ 407e94) [82] resid (real.c:523 @ 4055c7) [124] rprj3 (real.c:612 @ 4071f6)
+  [55] interp (real.c:686 @ 407f4e) [29] resid (real.c:525 @ 4055cb) [125] rprj3 (real.c:612 @ 407227)
+ [107] interp (real.c:689 @ 407f71) [4] resid (real.c:526 @ 4055d1) [34] rprj3 (real.c:619 @ 40722c)
+  [76] interp (real.c:688 @ 407f85) [5] resid (real.c:524 @ 4055dc) [94] rprj3 (real.c:620 @ 40724f)
+ [133] interp (real.c:685 @ 407f9c) [30] resid (real.c:523 @ 4055e4) [126] rprj3 (real.c:616 @ 40726a)
+  [87] interp (real.c:695 @ 40803e) [16] resid (real.c:525 @ 4055e9) [127] rprj3 (real.c:610 @ 40726f)
+  [88] interp (real.c:693 @ 408048) [1] resid (real.c:526 @ 4055f2) [142] rprj3 (real.c:616 @ 407325)
+  [23] interp (real.c:692 @ 40804d) [57] resid (real.c:525 @ 4055fa) [143] rprj3 (real.c:614 @ 40732f)
+  [89] interp (real.c:693 @ 408061) [58] resid (real.c:528 @ 405697) [147] vranlc (randdp.c:72 @ 40a6b0)
+ [134] interp (real.c:692 @ 408065) [10] resid (real.c:537 @ 405749) [128] vranlc (randdp.c:122 @ 40a6e9)
+ [108] interp (real.c:693 @ 40806c) [59] resid (real.c:530 @ 40578e) [129] vranlc (randdp.c:128 @ 40a710)
+  [24] interp (real.c:695 @ 408070) [2] resid (real.c:530 @ 405799) [62] vranlc (randdp.c:128 @ 40a71d)
+  [80] interp (real.c:694 @ 408083) [114] resid (real.c:537 @ 40579f) [51] vranlc (randdp.c:129 @ 40a726)
+ [148] norm2u3 (real.c:808 @ 4023f0) [41] resid (real.c:538 @ 4057b0) [95] vranlc (randdp.c:131 @ 40a72a)
+ [135] norm2u3 (real.c:825 @ 4024d0) [32] resid (real.c:537 @ 4057b4) [96] vranlc (randdp.c:129 @ 40a72e)
+  [44] norm2u3 (real.c:826 @ 4024e0) [99] resid (real.c:538 @ 4057b8) [47] vranlc (randdp.c:130 @ 40a732)
+  [45] norm2u3 (real.c:827 @ 4024f0) [115] resid (real.c:530 @ 4057bc) [69] vranlc (randdp.c:131 @ 40a73a)
+  [90] norm2u3 (real.c:826 @ 4024fc) [40] resid (real.c:537 @ 4057c1) [144] vranlc (randdp.c:130 @ 40a73e)
+ [149] psinv (real.c:449 @ 405d50) [33] resid (real.c:530 @ 4057c5) [52] vranlc (randdp.c:131 @ 40a743)
+  [48] psinv (real.c:460 @ 405fa8) [17] resid (real.c:537 @ 4057ca) [72] vranlc (randdp.c:134 @ 40a748)
+  [66] psinv (real.c:461 @ 406068) [3] resid (real.c:538 @ 4057ce) [63] vranlc (randdp.c:131 @ 40a74d)
+  [36] psinv (real.c:462 @ 406074) [31] resid (real.c:529 @ 4057d6) [7] vranlc (randdp.c:132 @ 40a751)
+ [136] psinv (real.c:461 @ 40607e) [116] resid (real.c:528 @ 4057db) [12] vranlc (randdp.c:133 @ 40a765)
+  [81] psinv (real.c:463 @ 406082) [117] resid (real.c:537 @ 405a39) [22] vranlc (randdp.c:134 @ 40a771)
+   [6] psinv (real.c:464 @ 406088) [91] resid (real.c:538 @ 405a66) [13] vranlc (randdp.c:135 @ 40a77a)
+  [37] psinv (real.c:462 @ 406093) [92] resid (real.c:537 @ 405a71) [14] vranlc (randdp.c:136 @ 40a78e)
+  [38] psinv (real.c:461 @ 40609b) [83] resid (real.c:530 @ 405aa2) [86] vranlc (randdp.c:137 @ 40a79b)
+ [109] psinv (real.c:463 @ 4060a3) [118] resid (real.c:537 @ 405ab4) [153] wtime_ (wtime.c:8 @ 401800)
+  [20] psinv (real.c:464 @ 4060ac) [119] resid (real.c:530 @ 405ac2) [130] zran3 (real.c:970 @ 403555)
+  [56] psinv (real.c:463 @ 4060b4) [120] resid (real.c:537 @ 405ac6) [145] zran3 (real.c:969 @ 40357a)
+ [110] psinv (real.c:460 @ 4060bc) [74] resid (real.c:538 @ 405ace) [70] zran3 (real.c:970 @ 403587)
