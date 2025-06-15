@@ -41,6 +41,7 @@ for that assignment have to be handed in via OLAT by 17:00 on the previous day
 | 2025-05-27 | [10](10)   | OpenMP affinity and tasks                                   |
 | 2025-06-03 | [11](11)   | Vectorization                                               |
 | 2025-06-10 | [12](12)   | Profiling and parallelization of a mystery application      |
+| 2025-06-17 | [13](13)   | Scalar architectures and optimizations                      |
 
 ## General Information
 
